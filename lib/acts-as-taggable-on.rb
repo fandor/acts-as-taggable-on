@@ -23,6 +23,7 @@ module ActsAsTaggableOn
   autoload :Tagging
   autoload :TagsHelper
   autoload :VERSION
+  autoload :DbConnection
 
   autoload_under 'taggable' do
     autoload :Cache
