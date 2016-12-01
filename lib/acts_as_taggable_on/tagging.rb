@@ -1,5 +1,8 @@
 module ActsAsTaggableOn
   class Tagging < ::ActiveRecord::Base #:nodoc:
+    include ActsAsTaggableOn::DbConnection
+    establish_tagging_database_connection
+
     belongs_to :tag, class_name: '::ActsAsTaggableOn::Tag', counter_cache: ActsAsTaggableOn.tags_counter
     belongs_to :taggable, polymorphic: true
 

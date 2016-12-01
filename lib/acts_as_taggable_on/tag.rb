@@ -1,6 +1,8 @@
 # encoding: utf-8
 module ActsAsTaggableOn
   class Tag < ::ActiveRecord::Base
+    include ActsAsTaggableOn::DbConnection
+    establish_tagging_database_connection
 
     ### ASSOCIATIONS:
 
