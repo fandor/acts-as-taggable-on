@@ -7,7 +7,7 @@ module ActsAsTaggableOn
 
       def establish_tagging_database_connection
         unless Rails.env == 'test'
-          db_config = File.join(Rails.root, "config", "acts_as_taggable_on_database.yml")
+          db_config = Rails.root.join("config", "acts_as_taggable_on_database.yml")
           if File.exist?(db_config)
             ## alternate DB Connection
             class_db_connection = YAML.load_file(db_config)[Rails.env]
